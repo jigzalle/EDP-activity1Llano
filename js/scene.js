@@ -102,14 +102,19 @@ scene.add(labelNZ);
  * See EXAMPLE-add-building-walkthrough.md
  */
 const spots = [
-  { name: 'Town Hall', color: 0xe8dcc8, x: -5, z: 3, w: 4, h: 4, d: 3 },
-  { name: 'Church', color: 0xd4c4a8, x: 2, z: 1, w: 3.5, h: 6, d: 3.5 },
-  { name: 'Market', color: 0xc8b090, x: 6, z: 4, w: 3, h: 3, d: 4 },
-  { name: 'Pier', color: 0x8a7858, x: -3, z: -5, w: 5, h: 1.5, d: 2 },
-  { name: 'School', color: 0xf0e8d8, x: -1, z: 6, w: 4, h: 3.5, d: 3 },
-  { name: 'Library', color: 0x32a852, x: -12, z: 12, w: 4, h: 3.5, d: 3 },
-  { name: 'Park', color: 0x32a852, x: -4, z: 15, w: 4, h: 3.5, d: 3 },
-  { name: 'Cafe', color: 0x32a852, x: 0, z: 10, w: 4, h: 3.5, d: 3 },
+  // { name: 'Town Hall', color: 0xe8dcc8, x: -5, z: 3, w: 4, h: 4, d: 3 },
+  // { name: 'Church', color: 0xd4c4a8, x: 2, z: 1, w: 3.5, h: 6, d: 3.5 },
+  // { name: 'Market', color: 0xc8b090, x: 6, z: 4, w: 3, h: 3, d: 4 },
+  // { name: 'Pier', color: 0x8a7858, x: -3, z: -5, w: 5, h: 1.5, d: 2 },
+  // { name: 'School', color: 0xf0e8d8, x: -1, z: 6, w: 4, h: 3.5, d: 3 },
+  // { name: 'Library', color: 0x32a852, x: -12, z: 12, w: 4, h: 3.5, d: 3 },
+  // { name: 'Park', color: 0x32a852, x: -4, z: 15, w: 4, h: 3.5, d: 3 },
+  // { name: 'Cafe', color: 0x32a852, x: 0, z: 10, w: 4, h: 3.5, d: 3 },
+{ name: 'GOLDIE BAKESHOP', color: 0xfc7303, x: 0, z: 0, w: 4, h: 4, d: 2 },
+{ name: 'HARKISHA', color: 0x8cfc03, x: 6, z: 0, w: 4, h: 3, d: 4 },
+{ name: 'BGFC', color: 0xfcf403, x: 6, z: 8, w: 5, h: 9, d: 5 },
+{ name: 'JIGZ RESIDENCE', color: 0xfc0303, x: 6, z: 15, w: 2, h: 2, d: 2 },
+{ name: 'SOCORRO NATIONAL HIGH SCHOOL', color: 0x034afc, x: 13, z: 7, w: 6, h: 5, d: 6 },
 ];
 
 spots.forEach((spot) => {

@@ -62,9 +62,9 @@ function animate() {
 
   /* STEP 0B — continuous camera orbit (uncomment the 4 lines below) */
   const t = Date.now() * 0.00025;
-  edpCamera.position.x = 14 + Math.sin(t) * 3;
-  edpCamera.position.z = 20 + Math.cos(t) * 2;
-  edpCamera.lookAt(0, 2, 0);
+  edpCamera.position.x = 20 + Math.sin(t) * 30;
+  edpCamera.position.z = 0 + Math.cos(t) * 30;
+  edpCamera.lookAt(0, 10, 0);
 
   edpRenderer.render(edpScene, edpCamera);
 }
