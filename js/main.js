@@ -16,8 +16,8 @@
 /* --- STEP 0A: slight move once on load --- */
 
 window.addEventListener('load', function () {
-  edpCamera.position.x = 15;
-  edpCamera.position.z = 19;
+  edpCamera.position.x = 30;
+  edpCamera.position.z = 38;
   edpCamera.lookAt(0, 2, 0);
   edpRenderer.render(edpScene, edpCamera);
 });
@@ -25,8 +25,8 @@ window.addEventListener('load', function () {
 /* --- STEP 0B: continuous orbit every frame (uncomment inside animate below) --- */
 
   const t = Date.now() * 0.00025;
-  edpCamera.position.x = 14 + Math.sin(t) * 3;
-  edpCamera.position.z = 20 + Math.cos(t) * 2;
+  edpCamera.position.x = 28 + Math.sin(t) * 6;
+  edpCamera.position.z = 40 + Math.cos(t) * 4;
   edpCamera.lookAt(0, 2, 0);
 
 
@@ -65,6 +65,23 @@ function animate() {
   edpCamera.position.x = 20 + Math.sin(t) * 30;
   edpCamera.position.z = 0 + Math.cos(t) * 30;
   edpCamera.lookAt(0, 10, 0);
+
+  // EXAMPLE PROPS — bird motion (uncomment after enabling makeBird in scene.js)
+  if (globalThis.edpBirds) {
+    edpBirds.forEach(function (bird, i) {
+      const bt = Date.now() * 0.001;
+      bird.position.x += Math.sin(bt + i) * 0.02;
+      bird.position.y = 6 + Math.sin(bt * 2 + i) * 0.4;
+      bird.rotation.y = Math.sin(bt * 0.5 + i) * 0.4;
+
+      const flap = Math.sin(bt * 10 + i) * 0.45;
+      if (bird.userData.leftWing) {
+        bird.userData.leftWing.rotation.z = 0.35 + flap;
+        bird.userData.rightWing.rotation.z = -0.35 - flap;
+      }
+    });
+  }
+  
 
   edpRenderer.render(edpScene, edpCamera);
 }
