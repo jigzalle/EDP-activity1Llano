@@ -166,10 +166,10 @@ globalThis.updateHover = updateHover;
 
 function onKeyDown(event) {
   // EXAMPLE — uncomment after enabling the block below
-  // if (event.code === 'KeyB') {
-  //   toggleNightMode();
-  //   return;
-  // }
+   if (event.code === 'KeyB') {
+    toggleNightMode();
+     return;
+   }
 
   if (event.code !== 'KeyR') return;
 
@@ -184,7 +184,7 @@ function onKeyDown(event) {
   }
 
   resetHud();
-  // resetSurroundings();   // EXAMPLE — uncomment after enabling the block below
+  resetSurroundings();   // EXAMPLE — uncomment after enabling the block below
   edpRenderer.domElement.style.cursor = 'default';
 }
 

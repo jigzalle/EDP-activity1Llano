@@ -58,7 +58,7 @@ window.addEventListener('keydown', onKeyDown);
 function animate() {
   requestAnimationFrame(animate);
 
-  // updateHover();  /* STEP 6 — uncomment when updateHover is enabled in events.js */
+   updateHover();  /* STEP 6 — uncomment when updateHover is enabled in events.js */
 
   /* STEP 0B — continuous camera orbit (uncomment the 4 lines below) */
   const t = Date.now() * 0.00025;

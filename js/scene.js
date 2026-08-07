@@ -11,7 +11,7 @@
 const hud = document.getElementById('hud');
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x0a1628);
+scene.background = new THREE.Color(0xf2f5ab);
 scene.fog = new THREE.Fog(0x0a1628, 35, 100);
 
 const camera = new THREE.PerspectiveCamera(
@@ -35,7 +35,7 @@ scene.add(sun);
 scene.add(new THREE.AmbientLight(0x406080, 0.55));
 
 const island = new THREE.Mesh(
-  new THREE.CylinderGeometry(18, 20, 1.2, 32),
+  new THREE.CylinderGeometry(30, 60, 1.2, 60),
   new THREE.MeshStandardMaterial({ color: 0x2d6a3e, roughness: 0.92 })
 );
 island.position.y = -0.6;
@@ -50,9 +50,10 @@ water.rotation.x = -Math.PI / 2;
 water.position.y = -0.8;
 scene.add(water);
 
+
 const buildings = [];
 
-const grid = new THREE.GridHelper(36, 18, 0x7dd3fc, 0x1e3a5f);
+const grid = new THREE.GridHelper(100, 80, 0x7dd3fc, 0x1e3a5f);
 grid.position.y = 0.02;
 scene.add(grid);
 
@@ -80,20 +81,22 @@ function makeAxisLabel(text, colorHex) {
 }
 
 const labelPX = makeAxisLabel('+X', 0xff6b6b);
-labelPX.position.set(13, 1.2, 0);
+labelPX.position.set(50, 1.2, 0);
 scene.add(labelPX);
 
 const labelNX = makeAxisLabel('-X', 0xff6b6b);
-labelNX.position.set(-13, 1.2, 0);
+labelNX.position.set(-50, 1.2, 0);
 scene.add(labelNX);
 
 const labelPZ = makeAxisLabel('+Z', 0x60a5fa);
-labelPZ.position.set(0, 1.2, 13);
+labelPZ.position.set(0, 1.2, 50);
 scene.add(labelPZ);
 
 const labelNZ = makeAxisLabel('-Z', 0x60a5fa);
-labelNZ.position.set(0, 1.2, -13);
+labelNZ.position.set(0, 1.2, -50);
 scene.add(labelNZ);
+
+
 
 /*
  * MAP LEGEND — also shown in the UI (#map-legend) and as grid / axis labels.
@@ -128,7 +131,9 @@ spots.forEach((spot) => {
   mesh.userData = { isBuilding: true, name: spot.name, baseColor: spot.color };
   scene.add(mesh);
   buildings.push(mesh);
+  
 });
+
 
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2(-9999, -9999);
